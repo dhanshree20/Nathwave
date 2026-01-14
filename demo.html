@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI & Machine Learning - Animated Dots</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0f172a, #1e3a8a, #2563eb);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+        }
+
+        .hero-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            width: 100%;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .badge {
+            background: linear-gradient(90deg, #ff416c, #ff4b2b);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: white;
+            box-shadow: 0 0 15px rgba(255, 75, 43, 0.4);
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 4rem);
+            margin: 20px 0;
+            color: white;
+            letter-spacing: -1px;
+        }
+
+        .subtext {
+            color: #cbd5e1;
+            max-width: 600px;
+            line-height: 1.6;
+            margin: 0 auto;
+        }
+
+        .visual {
+            width: 100%;
+            max-width: 800px;
+            display: flex;
+            justify-content: center;
+        }
+
+        svg {
+            width: 100%;
+            height: auto;
+        }
+
+        .node-text {
+            font-size: 14px;
+            fill: white;
+            font-weight: 500;
+        }
+
+        /* Standard Pulse Animation */
+        @keyframes pulse {
+            0% { opacity: 0.6; transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1.1); }
+        }
+
+        .pulsing {
+            animation: pulse 2s ease-in-out infinite alternate;
+            transform-origin: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="hero-wrapper">
+        <div class="header">
+            <span class="badge">Hot Topics in Tech</span>
+            <h1>AI & Machine Learning</h1>
+            <p class="subtext">Explore the cutting-edge technologies that are transforming industries and creating new possibilities</p>
+        </div>
+
+        <div class="visual">
+            <svg viewBox="0 0 800 600">
+                <defs>
+                    <radialGradient id="brain-glow" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="rgba(59, 130, 246, 0.3)"></stop>
+                        <stop offset="100%" stop-color="rgba(59, 130, 246, 0)"></stop>
+                    </radialGradient>
+                    <filter id="glow">
+                        <feGaussianBlur stdDeviation="5" result="blur"></feGaussianBlur>
+                        <feComposite in="SourceGraphic" in2="blur" operator="over"></feComposite>
+                    </filter>
+                </defs>
+
+                <circle cx="400" cy="300" r="200" fill="url(#brain-glow)"></circle>
+
+                <g stroke="rgba(255, 255, 255, 0.3)" stroke-width="1.5" stroke-dasharray="4,4" fill="none">
+                    <path id="path1" d="M400,300 L520,300" />
+                    <path id="path2" d="M400,300 L484,384" />
+                    <path id="path3" d="M400,300 L400,420" />
+                    <path id="path4" d="M400,300 L315,384" />
+                    <path id="path5" d="M400,300 L280,300" />
+                    <path id="path6" d="M400,300 L315,215" />
+                    <path id="path7" d="M400,300 L400,180" />
+                    <path id="path8" d="M400,300 L484,215" />
+                </g>
+
+                <circle r="4" fill="#60a5fa">
+                    <animateMotion dur="2s" repeatCount="indefinite" rotate="auto" calcMode="spline" keyTimes="0; 0.5; 1" keySplines="0.42, 0, 0.58, 1; 0.42, 0, 0.58, 1">
+                        <mpath xlink:href="#path1" />
+                    </animateMotion>
+                </circle>
+                <circle r="4" fill="#60a5fa">
+                    <animateMotion dur="2.5s" repeatCount="indefinite" rotate="auto" calcMode="spline" keyTimes="0; 0.5; 1" keySplines="0.42, 0, 0.58, 1; 0.42, 0, 0.58, 1">
+                        <mpath xlink:href="#path2" />
+                    </animateMotion>
+                </circle>
+                <circle r="4" fill="#60a5fa">
+                    <animateMotion dur="1.8s" repeatCount="indefinite" rotate="auto" calcMode="spline" keyTimes="0; 0.5; 1" keySplines="0.42, 0, 0.58, 1; 0.42, 0, 0.58, 1">
+                        <mpath xlink:href="#path3" />
+                    </animateMotion>
+                </circle>
+                <circle r="4" fill="#60a5fa">
+                    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" calcMode="spline" keyTimes="0; 0.5; 1" keySplines="0.42, 0, 0.58, 1; 0.42, 0, 0.58, 1">
+                        <mpath xlink:href="#path4" />
+                    </animateMotion>
+                </circle>
+                <circle r="4" fill="#60a5fa">
+                    <animateMotion dur="2.2s" repeatCount="indefinite" rotate="auto" calcMode="spline" keyTimes="0; 0.5; 1" keySplines="0.42, 0, 0.58, 1; 0.42, 0, 0.58, 1">
+                        <mpath xlink:href="#path5" />
+                    </animateMotion>
+                </circle>
+                <circle r="4" fill="#60a5fa">
+                    <animateMotion dur="2.7s" repeatCount="indefinite" rotate="auto" calcMode="spline" keyTimes="0; 0.5; 1" keySplines="0.42, 0, 0.58, 1; 0.42, 0, 0.58, 1">
+                        <mpath xlink:href="#path6" />
+                    </animateMotion>
+                </circle>
+                <circle r="4" fill="#60a5fa">
+                    <animateMotion dur="1.5s" repeatCount="indefinite" rotate="auto" calcMode="spline" keyTimes="0; 0.5; 1" keySplines="0.42, 0, 0.58, 1; 0.42, 0, 0.58, 1">
+                        <mpath xlink:href="#path7" />
+                    </animateMotion>
+                </circle>
+                <circle r="4" fill="#60a5fa">
+                    <animateMotion dur="2.4s" repeatCount="indefinite" rotate="auto" calcMode="spline" keyTimes="0; 0.5; 1" keySplines="0.42, 0, 0.58, 1; 0.42, 0, 0.58, 1">
+                        <mpath xlink:href="#path8" />
+                    </animateMotion>
+                </circle>
+
+                <circle cx="400" cy="300" r="22" fill="#3b82f6" filter="url(#glow)" class="pulsing"></circle>
+                <circle cx="400" cy="300" r="12" fill="white"></circle>
+
+                <circle cx="520" cy="300" r="10" fill="white" class="pulsing"></circle>
+                <circle cx="484" cy="384" r="10" fill="white" class="pulsing"></circle>
+                <circle cx="400" cy="420" r="10" fill="white" class="pulsing"></circle>
+                <circle cx="315" cy="384" r="10" fill="white" class="pulsing"></circle>
+                <circle cx="280" cy="300" r="10" fill="white" class="pulsing"></circle>
+                <circle cx="315" cy="215" r="10" fill="white" class="pulsing"></circle>
+                <circle cx="400" cy="180" r="10" fill="white" class="pulsing"></circle>
+                <circle cx="484" cy="215" r="10" fill="white" class="pulsing"></circle>
+
+                <text x="415" y="160" class="node-text">Neural Networks</text>
+                <text x="415" y="450" class="node-text">Deep Learning</text>
+                <text x="230" y="170" class="node-text">Computer Vision</text>
+                <text x="250" y="440" class="node-text">NLP</text>
+                <text x="130" y="305" class="node-text">Predictive Analytics</text>
+                <text x="540" y="305" class="node-text">Machine Learning</text>
+            </svg>
+        </div>
+    </div>
+
+</body>
+</html>

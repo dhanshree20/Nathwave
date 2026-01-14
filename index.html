@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nathewave Nexgen</title>
-    <link rel="icon" type="image/png" href="/images/logo-removebg-preview.png">
+    <link rel="icon" type="image/png" href="images/1logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -24,7 +24,7 @@
         <div class="nav-container">
             <!-- Logo -->
             <a href="index.html" class="logo">
-                <img src="/images/logo-removebg-preview.png" alt="Nathewave Nexgen">
+                <img src="images/1logo.png" alt="Nathewave Nexgen">
             </a>
 
             <!-- Hamburger Menu for Mobile -->
@@ -111,89 +111,102 @@
 
     <!-- Home AI ML Animation -->
 
-    <div class="header">
-        <span class="badge">Hot Topics in Tech</span>
-        <h1>AI & Machine Learning</h1>
-        <p class="subtext">Explore the cutting-edge technologies that are transforming industries and creating new possibilities</p>
+
+    <div class="hero-wrapper">
+        <div class="header-animation">
+            <span class="badge-animation">Hot Topics in Tech</span>
+            <h1 class="ai-animation">AI & Machine Learning</h1>
+            <p class="subtext-animation">Explore the cutting-edge technologies that are transforming industries and creating new possibilities</p>
+        </div>
+
+        <div class="visual">
+            <svg viewBox="0 0 800 600">
+                <defs>
+                    <radialGradient id="brain-glow" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="rgba(59, 130, 246, 0.3)"></stop>
+                        <stop offset="100%" stop-color="rgba(59, 130, 246, 0)"></stop>
+                    </radialGradient>
+                    <filter id="glow">
+                        <feGaussianBlur stdDeviation="5" result="blur"></feGaussianBlur>
+                        <feComposite in="SourceGraphic" in2="blur" operator="over"></feComposite>
+                    </filter>
+                </defs>
+
+                <circle cx="400" cy="300" r="200" fill="url(#brain-glow)"></circle>
+
+                <g stroke="rgba(255, 255, 255, 0.3)" stroke-width="1.5" stroke-dasharray="4,4" fill="none">
+                    <path id="path1" d="M400,300 L520,300" />
+                    <path id="path2" d="M400,300 L484,384" />
+                    <path id="path3" d="M400,300 L400,420" />
+                    <path id="path4" d="M400,300 L315,384" />
+                    <path id="path5" d="M400,300 L280,300" />
+                    <path id="path6" d="M400,300 L315,215" />
+                    <path id="path7" d="M400,300 L400,180" />
+                    <path id="path8" d="M400,300 L484,215" />
+                </g>
+
+                <circle r="4" fill="#60a5fa">
+                    <animateMotion dur="2s" repeatCount="indefinite" rotate="auto" calcMode="spline" keyTimes="0; 0.5; 1" keySplines="0.42, 0, 0.58, 1; 0.42, 0, 0.58, 1">
+                        <mpath xlink:href="#path1" />
+                    </animateMotion>
+                </circle>
+                <circle r="4" fill="#60a5fa">
+                    <animateMotion dur="2.5s" repeatCount="indefinite" rotate="auto" calcMode="spline" keyTimes="0; 0.5; 1" keySplines="0.42, 0, 0.58, 1; 0.42, 0, 0.58, 1">
+                        <mpath xlink:href="#path2" />
+                    </animateMotion>
+                </circle>
+                <circle r="4" fill="#60a5fa">
+                    <animateMotion dur="1.8s" repeatCount="indefinite" rotate="auto" calcMode="spline" keyTimes="0; 0.5; 1" keySplines="0.42, 0, 0.58, 1; 0.42, 0, 0.58, 1">
+                        <mpath xlink:href="#path3" />
+                    </animateMotion>
+                </circle>
+                <circle r="4" fill="#60a5fa">
+                    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" calcMode="spline" keyTimes="0; 0.5; 1" keySplines="0.42, 0, 0.58, 1; 0.42, 0, 0.58, 1">
+                        <mpath xlink:href="#path4" />
+                    </animateMotion>
+                </circle>
+                <circle r="4" fill="#60a5fa">
+                    <animateMotion dur="2.2s" repeatCount="indefinite" rotate="auto" calcMode="spline" keyTimes="0; 0.5; 1" keySplines="0.42, 0, 0.58, 1; 0.42, 0, 0.58, 1">
+                        <mpath xlink:href="#path5" />
+                    </animateMotion>
+                </circle>
+                <circle r="4" fill="#60a5fa">
+                    <animateMotion dur="2.7s" repeatCount="indefinite" rotate="auto" calcMode="spline" keyTimes="0; 0.5; 1" keySplines="0.42, 0, 0.58, 1; 0.42, 0, 0.58, 1">
+                        <mpath xlink:href="#path6" />
+                    </animateMotion>
+                </circle>
+                <circle r="4" fill="#60a5fa">
+                    <animateMotion dur="1.5s" repeatCount="indefinite" rotate="auto" calcMode="spline" keyTimes="0; 0.5; 1" keySplines="0.42, 0, 0.58, 1; 0.42, 0, 0.58, 1">
+                        <mpath xlink:href="#path7" />
+                    </animateMotion>
+                </circle>
+                <circle r="4" fill="#60a5fa">
+                    <animateMotion dur="2.4s" repeatCount="indefinite" rotate="auto" calcMode="spline" keyTimes="0; 0.5; 1" keySplines="0.42, 0, 0.58, 1; 0.42, 0, 0.58, 1">
+                        <mpath xlink:href="#path8" />
+                    </animateMotion>
+                </circle>
+
+                <circle cx="400" cy="300" r="22" fill="#3b82f6" filter="url(#glow)" class="pulsing"></circle>
+                <circle cx="400" cy="300" r="12" fill="white"></circle>
+
+                <circle cx="520" cy="300" r="10" fill="white" class="pulsing"></circle>
+                <circle cx="484" cy="384" r="10" fill="white" class="pulsing"></circle>
+                <circle cx="400" cy="420" r="10" fill="white" class="pulsing"></circle>
+                <circle cx="315" cy="384" r="10" fill="white" class="pulsing"></circle>
+                <circle cx="280" cy="300" r="10" fill="white" class="pulsing"></circle>
+                <circle cx="315" cy="215" r="10" fill="white" class="pulsing"></circle>
+                <circle cx="400" cy="180" r="10" fill="white" class="pulsing"></circle>
+                <circle cx="484" cy="215" r="10" fill="white" class="pulsing"></circle>
+
+                <text x="415" y="160" class="node-text">Neural Networks</text>
+                <text x="415" y="450" class="node-text">Deep Learning</text>
+                <text x="230" y="170" class="node-text">Computer Vision</text>
+                <text x="250" y="440" class="node-text">NLP</text>
+                <text x="130" y="305" class="node-text">Predictive Analytics</text>
+                <text x="540" y="305" class="node-text">Machine Learning</text>
+            </svg>
+        </div>
     </div>
-
-    <div class="network-container" id="network">
-        <svg id="network-svg"></svg>
-        <div class="center-glow"></div>
-        
-        <div class="label large-label" style="top: 10%; left: 10%;">Algorithms</div>
-        <div class="label large-label" style="top: 0%; left: 50%;">Data Science</div>
-        <div class="label large-label" style="top: 25%; left: 80%;">Big Data</div>
-        <div class="label large-label" style="top: 85%; left: 15%;">ML</div>
-        <div class="label large-label" style="top: 85%; left: 75%;">AI</div>
-    </div>
-
-    <script>
-        const nodes = [
-            { name: "Computer Vision", angle: 300, dist: 120, size: 8 },
-            { name: "Neural Networks", angle: 60, dist: 130, size: 10 },
-            { name: "Machine Learning", angle: 10, dist: 180, size: 12 },
-            { name: "Deep Learning", angle: 110, dist: 190, size: 14 },
-            { name: "NLP", angle: 230, dist: 150, size: 7 },
-            { name: "Predictive Analytics", angle: 190, dist: 170, size: 11 },
-            { name: "", angle: 150, dist: 220, size: 15 },
-            { name: "", angle: 260, dist: 240, size: 10 },
-            { name: "", angle: 340, dist: 210, size: 13 }
-        ];
-
-        const container = document.getElementById('network');
-        const svg = document.getElementById('network-svg');
-        const centerX = 300;
-        const centerY = 300;
-
-        nodes.forEach((node, index) => {
-            const rad = (node.angle * Math.PI) / 180;
-            const x = centerX + Math.cos(rad) * node.dist;
-            const y = centerY + Math.sin(rad) * node.dist;
-
-            // Calculate movement vector for animation (move inward by 30px)
-            const moveInwardDist = -30;
-            const moveXStart = Math.cos(rad) * moveInwardDist;
-            const moveYStart = Math.sin(rad) * moveInwardDist;
-
-            // Create Node
-            const nodeEl = document.createElement('div');
-            nodeEl.className = 'node';
-            nodeEl.style.width = node.size + 'px';
-            nodeEl.style.height = node.size + 'px';
-            nodeEl.style.left = x + 'px';
-            nodeEl.style.top = y + 'px';
-            
-            // Set CSS variables for movement
-            nodeEl.style.setProperty('--move-x-start', `${moveXStart}px`);
-            nodeEl.style.setProperty('--move-y-start', `${moveYStart}px`);
-            nodeEl.style.animationDelay = `${index * 0.5}s`; // Staggered start
-            container.appendChild(nodeEl);
-
-            // Create Label
-            if (node.name) {
-                const labelEl = document.createElement('div');
-                labelEl.className = 'label';
-                labelEl.innerText = node.name;
-                labelEl.style.left = (x + 10) + 'px';
-                labelEl.style.top = (y - 15) + 'px';
-                labelEl.style.setProperty('--move-x-start', `${moveXStart}px`);
-                labelEl.style.setProperty('--move-y-start', `${moveYStart}px`);
-                labelEl.style.animationDelay = `${index * 0.5}s`;
-                container.appendChild(labelEl);
-            }
-
-            // Draw Line to center
-            const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
-            line.setAttribute("x1", centerX);
-            line.setAttribute("y1", centerY);
-            line.setAttribute("x2", x);
-            line.setAttribute("y2", y);
-            line.setAttribute("stroke", "rgba(123, 164, 255, 0.3)");
-            line.setAttribute("stroke-dasharray", "4");
-            svg.appendChild(line);
-        });
-    </script>
 
     <!-- AI ML Section -->
 
@@ -862,7 +875,7 @@
                     <!-- Company Info -->
                     <div class="footer-col footer-about">
                         <h3 class="footer-logo">
-                            <img src="/images/logo-removebg-preview.png" alt="Nathewave Nexgen">
+                            <img src="images/1logo.png" alt="Nathewave Nexgen">
                         </h3>
                         <p class="footer-fontA">Pioneering AI and machine learning solutions for businesses worldwide.
                         </p>
