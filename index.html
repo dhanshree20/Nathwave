@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nathewave Nexgen</title>
+    <link rel="icon" type="image/png" href="/images/logo-removebg-preview.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+/>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+                <img src="/images/logo-removebg-preview.png" alt="Nathewave Nexgen">
+            </a>
+
+            <!-- Hamburger Menu for Mobile -->
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <!-- Navigation Links -->
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="career.html" class="nav-link">Career</a></li>
+                <li><a href="contact.html" class="nav-link nav-btn">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+    <div class="hero-background">
+
+        <!-- Background Video -->
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="/images/HERO_VIDEO.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <div class="hero-overlay"></div>
+
+        <!-- <div class="animated-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div> -->
+    </div>
+
+    <!-- Center Content -->
+    <div class="hero-content">
+        <h1 class="hero-title">
+            Engineering Intelligent Solutions for a Smarter Tomorrow
+        </h1>
+        <p class="hero-subtitle">
+            Technology That Moves Ideas Into Reality
+        </p>
+    </div>
+</section>
+
+
+    <!-- Smarter Business with AI Section -->
+    <section class="feature-section">
+        <div class="container">
+            <div class="feature-row">
+                <div class="feature-text-content reveal">
+                    <h2 class="feature-heading">SMARTER<br><strong>BUSINESS WITH AI</strong></h2>
+                    <p>AI is more than automation. Nathewave Nexgen offers AI as a Service, AI consulting, and
+                        enterprise AI solutions that power automation, enable data-driven decisions, and enhance
+                        customer experience.</p>
+                    <p>As a trusted AI services company, we design scalable strategies, deploy machine learning, and
+                        deliver measurable business value.</p>
+                    <a href="services.html" class="feature-btn">
+                        <span>Explore AI Solutions</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14" />
+                            <path d="m12 5 7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="feature-image reveal">
+                    <div class="image-wrapper">
+                        <div class="decorative-circle circle-top"></div>
+                        <div class="feature-img-box">
+                            <img src="images/ai-human-interaction-modern-workplace.jpg" alt="AI Technology">
+                        </div>
+                        <div class="decorative-circle circle-bottom"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Home AI ML Animation -->
+
+    <div class="header">
+        <span class="badge">Hot Topics in Tech</span>
+        <h1>AI & Machine Learning</h1>
+        <p class="subtext">Explore the cutting-edge technologies that are transforming industries and creating new possibilities</p>
+    </div>
+
+    <div class="network-container" id="network">
+        <svg id="network-svg"></svg>
+        <div class="center-glow"></div>
+        
+        <div class="label large-label" style="top: 10%; left: 10%;">Algorithms</div>
+        <div class="label large-label" style="top: 0%; left: 50%;">Data Science</div>
+        <div class="label large-label" style="top: 25%; left: 80%;">Big Data</div>
+        <div class="label large-label" style="top: 85%; left: 15%;">ML</div>
+        <div class="label large-label" style="top: 85%; left: 75%;">AI</div>
+    </div>
+
+    <script>
+        const nodes = [
+            { name: "Computer Vision", angle: 300, dist: 120, size: 8 },
+            { name: "Neural Networks", angle: 60, dist: 130, size: 10 },
+            { name: "Machine Learning", angle: 10, dist: 180, size: 12 },
+            { name: "Deep Learning", angle: 110, dist: 190, size: 14 },
+            { name: "NLP", angle: 230, dist: 150, size: 7 },
+            { name: "Predictive Analytics", angle: 190, dist: 170, size: 11 },
+            { name: "", angle: 150, dist: 220, size: 15 },
+            { name: "", angle: 260, dist: 240, size: 10 },
+            { name: "", angle: 340, dist: 210, size: 13 }
+        ];
+
+        const container = document.getElementById('network');
+        const svg = document.getElementById('network-svg');
+        const centerX = 300;
+        const centerY = 300;
+
+        nodes.forEach((node, index) => {
+            const rad = (node.angle * Math.PI) / 180;
+            const x = centerX + Math.cos(rad) * node.dist;
+            const y = centerY + Math.sin(rad) * node.dist;
+
+            // Calculate movement vector for animation (move inward by 30px)
+            const moveInwardDist = -30;
+            const moveXStart = Math.cos(rad) * moveInwardDist;
+            const moveYStart = Math.sin(rad) * moveInwardDist;
+
+            // Create Node
+            const nodeEl = document.createElement('div');
+            nodeEl.className = 'node';
+            nodeEl.style.width = node.size + 'px';
+            nodeEl.style.height = node.size + 'px';
+            nodeEl.style.left = x + 'px';
+            nodeEl.style.top = y + 'px';
+            
+            // Set CSS variables for movement
+            nodeEl.style.setProperty('--move-x-start', `${moveXStart}px`);
+            nodeEl.style.setProperty('--move-y-start', `${moveYStart}px`);
+            nodeEl.style.animationDelay = `${index * 0.5}s`; // Staggered start
+            container.appendChild(nodeEl);
+
+            // Create Label
+            if (node.name) {
+                const labelEl = document.createElement('div');
+                labelEl.className = 'label';
+                labelEl.innerText = node.name;
+                labelEl.style.left = (x + 10) + 'px';
+                labelEl.style.top = (y - 15) + 'px';
+                labelEl.style.setProperty('--move-x-start', `${moveXStart}px`);
+                labelEl.style.setProperty('--move-y-start', `${moveYStart}px`);
+                labelEl.style.animationDelay = `${index * 0.5}s`;
+                container.appendChild(labelEl);
+            }
+
+            // Draw Line to center
+            const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+            line.setAttribute("x1", centerX);
+            line.setAttribute("y1", centerY);
+            line.setAttribute("x2", x);
+            line.setAttribute("y2", y);
+            line.setAttribute("stroke", "rgba(123, 164, 255, 0.3)");
+            line.setAttribute("stroke-dasharray", "4");
+            svg.appendChild(line);
+        });
+    </script>
+
+    <!-- AI ML Section -->
+
+    <section class="topics">
+  <h2>Trending Topics in AI & ML</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <span class="tag hot">HOT</span>
+      <div class="icon">
+  <i class="fa-solid fa-asterisk"></i>
+</div>
+      <h3>Generative AI</h3>
+      <p>Creating new content, images, and text with models like GPT-4 and DALL-E</p>
+    </div>
+
+    <div class="card">
+      <span class="tag trending">TRENDING</span>
+      <div class="icon">
+  <i class="fa-solid fa-microchip"></i>
+</div>
+      <h3>Computer Vision</h3>
+      <p>Enabling machines to interpret and make decisions based on visual data</p>
+    </div>
+
+    <div class="card">
+      <span class="tag hot">HOT</span>
+      <div class="icon">
+  <i class="fa-solid fa-message"></i>
+</div>
+
+      <h3>Natural Language Processing</h3>
+      <p>Understanding and generating human language for chatbots and assistants</p>
+    </div>
+
+    <div class="card">
+      <span class="tag growing">GROWING</span>
+      <div class="icon">
+  <i class="fa-solid fa-arrow-trend-up"></i>
+</div>
+
+      <h3>Predictive Analytics</h3>
+      <p>Using historical data and algorithms to forecast future outcomes and trends</p>
+    </div>
+
+    <div class="card">
+      <span class="tag essential">ESSENTIAL</span>
+      <div class="icon">
+  <i class="fa-solid fa-wave-square"></i>
+</div>
+      <h3>Deep Learning</h3>
+      <p>Neural networks with multiple layers that mimic human brain function</p>
+    </div>
+
+    <div class="card">
+      <span class="tag rising">RISING</span>
+      <div class="icon">
+  <i class="fa-solid fa-rotate"></i>
+</div>
+      <h3>Reinforcement Learning</h3>
+      <p>Training algorithms through reward-based feedback in dynamic environments</p>
+    </div>
+
+  </div>
+</section>
+
+    <!-- Our Core Services Section -->
+    <section class="core-services-section">
+        <div class="container">
+            <div class="services-header">
+                <!-- <span class="services-watermark">Services</span> -->
+                <h2 class="services-title">Our Core Services</h2>
+                <p class="services-subtitle">We help you grow, innovate, and stay ahead in the digital era.</p>
+            </div>
+            <div class="core-services-grid">
+                <!-- Web Development -->
+                <div class="core-service-card reveal">
+                    <div class="service-card-header">
+                        <div class="core-service-icon icon-web">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+                                <path d="M2 12h20" />
+                            </svg>
+                        </div>
+                        <h3>Web Development</h3>
+                    </div>
+                    <p>Build stunning, responsive websites that captivate your audience. Our expert team creates modern,
+                        fast-loading web solutions using the latest technologies. From corporate sites to e-commerce
+                        platforms, we deliver pixel-perfect designs with seamless user experiences that drive engagement
+                        and conversions.</p>
+                    <a href="services.html" class="read-more-btn">Read More »</a>
+                </div>
+
+                <!-- App Development -->
+                <div class="core-service-card reveal">
+                    <div class="service-card-header">
+                        <div class="core-service-icon icon-app">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect width="14" height="20" x="5" y="2" rx="2" ry="2" />
+                                <path d="M12 18h.01" />
+                            </svg>
+                        </div>
+                        <h3>App Development</h3>
+                    </div>
+                    <p>Transform your ideas into powerful mobile applications. We develop native and cross-platform apps
+                        for iOS and Android that deliver exceptional performance and intuitive user interfaces. From
+                        concept to launch, we ensure your app stands out in the competitive mobile marketplace.</p>
+                    <a href="services.html" class="read-more-btn">Read More »</a>
+                </div>
+
+                <!-- Custom Software -->
+                <div class="core-service-card reveal">
+                    <div class="service-card-header">
+                        <div class="core-service-icon icon-dev">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="16 18 22 12 16 6" />
+                                <polyline points="8 6 2 12 8 18" />
+                            </svg>
+                        </div>
+                        <h3>Custom Software</h3>
+                    </div>
+                    <p>Get tailor-made software solutions designed specifically for your business needs. Our development
+                        team builds scalable, secure, and efficient applications that streamline your operations,
+                        automate workflows, and give you a competitive edge in your industry.</p>
+                    <a href="services.html" class="read-more-btn">Read More »</a>
+                </div>
+
+                <!-- Cloud Services -->
+                <div class="core-service-card reveal">
+                    <div class="service-card-header">
+                        <div class="core-service-icon icon-cloud">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
+                            </svg>
+                        </div>
+                        <h3>Cloud Services</h3>
+                    </div>
+                    <p>Migrate, manage, and optimize your cloud infrastructure with confidence. We provide comprehensive
+                        cloud solutions across AWS, Azure, and GCP, ensuring seamless migration, cost optimization, and
+                        robust security for your business-critical applications and data.</p>
+                    <a href="services.html" class="read-more-btn">Read More »</a>
+                </div>
+
+                <!-- Data Science -->
+                <div class="core-service-card reveal">
+                    <div class="service-card-header">
+                        <div class="core-service-icon icon-data">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M3 3v18h18" />
+                                <path d="m19 9-5 5-4-4-3 3" />
+                            </svg>
+                        </div>
+                        <h3>Data Science</h3>
+                    </div>
+                    <p>Unlock the power of your data with advanced analytics and insights. Our data scientists help you
+                        collect, analyze, and visualize data to make informed decisions. From predictive modeling to
+                        business intelligence dashboards, we turn raw data into actionable strategies.</p>
+                    <a href="services.html" class="read-more-btn">Read More »</a>
+                </div>
+
+                <!-- Artificial Intelligence -->
+                <div class="core-service-card reveal">
+                    <div class="service-card-header">
+                        <div class="core-service-icon icon-ai">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M12 8V4H8" />
+                                <rect width="16" height="12" x="4" y="8" rx="2" />
+                                <path d="M2 14h2" />
+                                <path d="M20 14h2" />
+                                <path d="M15 13v2" />
+                                <path d="M9 13v2" />
+                            </svg>
+                        </div>
+                        <h3>Artificial Intelligence</h3>
+                    </div>
+                    <p>Harness the power of AI to revolutionize your business. From machine learning models to
+                        generative AI solutions, we help you automate processes, enhance customer experiences, and drive
+                        innovation with cutting-edge artificial intelligence technologies.</p>
+                    <a href="services.html" class="read-more-btn">Read More »</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries We Serve Section -->
+    <section class="industries-section reveal">
+        <div class="container">
+            <div class="industries-layout">
+                <div class="industries-text">
+                    <h2 class="industries-heading">INDUSTRIES</h2>
+                    <h3 class="industries-subheading">WE SERVE</h3>
+                    <p class="industries-desc">Every industry has unique challenges and opportunities. We deliver
+                        tailored cloud and technology solutions designed to meet specific needs in scalability,
+                        performance, and security.</p>
+                    <!-- <a href="services.html" class="industries-btn">
+                        <span>Find Your Industry Solution</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14" />
+                            <path d="m12 5 7 7-7 7" />
+                        </svg>
+                    </a> -->
+                </div>
+            </div>
+        </div>
+        <div class="industries-marquee">
+            <div class="industries-grid">
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                            <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                        </svg>
+                    </div>
+                    <span>Education & eLearning</span>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+                            <path
+                                d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08v0c.82.82 2.13.85 3 .07l2.07-1.9a2.82 2.82 0 0 1 3.79 0l2.96 2.66" />
+                        </svg>
+                    </div>
+                    <span>Healthcare & Pharmaceuticals</span>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="16" height="16" x="4" y="4" rx="2" />
+                            <path d="M4 12h16" />
+                            <path d="M12 4v16" />
+                            <path d="m4 4 16 16" />
+                        </svg>
+                    </div>
+                    <span>Manufacturing & Logistics</span>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z" />
+                        </svg>
+                    </div>
+                    <span>Energy & Utilities</span>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="8" cy="21" r="1" />
+                            <circle cx="19" cy="21" r="1" />
+                            <path
+                                d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+                        </svg>
+                    </div>
+                    <span>Retail & Ecommerce</span>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 21h18" />
+                            <path d="M5 21V7l8-4v18" />
+                            <path d="M19 21V11l-6-4" />
+                            <path d="M9 9v.01" />
+                            <path d="M9 12v.01" />
+                            <path d="M9 15v.01" />
+                            <path d="M9 18v.01" />
+                        </svg>
+                    </div>
+                    <span>Government & Public Sector</span>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                            <polyline points="9 22 9 12 15 12 15 22" />
+                        </svg>
+                    </div>
+                    <span>Real Estate</span>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z" />
+                        </svg>
+                    </div>
+                    <span>Travel & Hospitality</span>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 8h1a4 4 0 1 1 0 8h-1" />
+                            <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z" />
+                            <line x1="6" x2="6" y1="2" y2="4" />
+                            <line x1="10" x2="10" y1="2" y2="4" />
+                            <line x1="14" x2="14" y1="2" y2="4" />
+                        </svg>
+                    </div>
+                    <span>Food & Beverages</span>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" x2="12" y1="2" y2="22" />
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                        </svg>
+                    </div>
+                    <span>Finance & Banking</span>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="23 7 16 12 23 17 23 7" />
+                            <rect width="15" height="14" x="1" y="5" rx="2" ry="2" />
+                        </svg>
+                    </div>
+                    <span>Media & Entertainment</span>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                        </svg>
+                    </div>
+                    <span>Telecommunications</span>
+                </div>
+                <!-- Duplicated for Infinite Scroll -->
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                            <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                        </svg>
+                    </div>
+                    <span>Education & eLearning</span>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+                            <path
+                                d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08v0c.82.82 2.13.85 3 .07l2.07-1.9a2.82 2.82 0 0 1 3.79 0l2.96 2.66" />
+                        </svg>
+                    </div>
+                    <span>Healthcare & Pharmaceuticals</span>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="16" height="16" x="4" y="4" rx="2" />
+                            <path d="M4 12h16" />
+                            <path d="M12 4v16" />
+                            <path d="m4 4 16 16" />
+                        </svg>
+                    </div>
+                    <span>Manufacturing & Logistics</span>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z" />
+                        </svg>
+                    </div>
+                    <span>Energy & Utilities</span>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="8" cy="21" r="1" />
+                            <circle cx="19" cy="21" r="1" />
+                            <path
+                                d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+                        </svg>
+                    </div>
+                    <span>Retail & Ecommerce</span>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 21h18" />
+                            <path d="M5 21V7l8-4v18" />
+                            <path d="M19 21V11l-6-4" />
+                            <path d="M9 9v.01" />
+                            <path d="M9 12v.01" />
+                            <path d="M9 15v.01" />
+                            <path d="M9 18v.01" />
+                        </svg>
+                    </div>
+                    <span>Government & Public Sector</span>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                            <polyline points="9 22 9 12 15 12 15 22" />
+                        </svg>
+                    </div>
+                    <span>Real Estate</span>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z" />
+                        </svg>
+                    </div>
+                    <span>Travel & Hospitality</span>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 8h1a4 4 0 1 1 0 8h-1" />
+                            <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z" />
+                            <line x1="6" x2="6" y1="2" y2="4" />
+                            <line x1="10" x2="10" y1="2" y2="4" />
+                            <line x1="14" x2="14" y1="2" y2="4" />
+                        </svg>
+                    </div>
+                    <span>Food & Beverages</span>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" x2="12" y1="2" y2="22" />
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                        </svg>
+                    </div>
+                    <span>Finance & Banking</span>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="23 7 16 12 23 17 23 7" />
+                            <rect width="15" height="14" x="1" y="5" rx="2" ry="2" />
+                        </svg>
+                    </div>
+                    <span>Media & Entertainment</span>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                        </svg>
+                    </div>
+                    <span>Telecommunications</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Partners Section -->
+    <!-- <section class="partners-section">
+        <div class="container">
+            <h2 class="partners-title">Our Partners</h2>
+            <p class="partners-subtitle">Our partners trust us for innovative solutions, reliable services, and
+                long-term collaboration.<br>Together, we build success stories that inspire growth and transformation.
+            </p>
+        </div>
+        <div class="partners-scroll-wrapper">
+            <div class="partners-scroll">
+                <div class="partner-logo">
+                    <span class="logo-text-simple">Microsoft</span>
+                </div>
+                <div class="partner-logo">
+                    <span class="logo-text-oracle">ORACLE</span>
+                </div>
+                <div class="partner-logo">
+                    <span class="logo-text-aws">aws</span>
+                </div>
+                <div class="partner-logo">
+                    <span class="logo-text-azure">Azure</span>
+                </div>
+                <div class="partner-logo">
+                    <span class="logo-text-cisco">CISCO</span>
+                </div>
+                <div class="partner-logo microsoft-logo">
+                    <div class="ms-grid">
+                        <span class="ms-red"></span>
+                        <span class="ms-green"></span>
+                        <span class="ms-blue"></span>
+                        <span class="ms-yellow"></span>
+                    </div>
+                    <span class="ms-text">Microsoft</span>
+                </div>
+                Duplicate for seamless loop -->
+    <!-- <div class="partner-logo">
+                    <span class="logo-text-simple">Microsoft</span>
+                </div>
+                <div class="partner-logo">
+                    <span class="logo-text-oracle">ORACLE</span>
+                </div>
+                <div class="partner-logo">
+                    <span class="logo-text-aws">aws</span>
+                </div>
+                <div class="partner-logo">
+                    <span class="logo-text-azure">Azure</span>
+                </div>
+                <div class="partner-logo">
+                    <span class="logo-text-cisco">CISCO</span>
+                </div>
+                <div class="partner-logo microsoft-logo">
+                    <div class="ms-grid">
+                        <span class="ms-red"></span>
+                        <span class="ms-green"></span>
+                        <span class="ms-blue"></span>
+                        <span class="ms-yellow"></span>
+                    </div>
+                    <span class="ms-text">Microsoft</span>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-section">
+        <div class="container">
+            <div class="why-choose-layout">
+                <div class="why-choose-content">
+                    <span class="why-choose-label">Why Choose Nathewave Nexgen?</span>
+                    <h2 class="why-choose-title">Empowering Your Success</h2>
+                    <p class="why-choose-desc">At Nathewave Nexgen, we combine expertise, innovation, and a
+                        client-centric approach to deliver exceptional value. Our commitment to excellence sets us apart
+                        in the tech industry.</p>
+                </div>
+                <div class="why-choose-features">
+                    <div class="why-feature reveal">
+                        <div class="why-feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
+                            </svg>
+                        </div>
+                        <span>Industry-leading expertise in cutting-edge technologies</span>
+                    </div>
+                    <div class="why-feature reveal">
+                        <div class="why-feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
+                            </svg>
+                        </div>
+                        <span>Tailored solutions for businesses of all sizes</span>
+                    </div>
+                    <div class="why-feature reveal">
+                        <div class="why-feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                                <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                            </svg>
+                        </div>
+                        <span>Comprehensive training programs for aspiring tech professionals</span>
+                    </div>
+                    <div class="why-feature reveal">
+                        <div class="why-feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <path d="m9 11 3 3L22 4" />
+                            </svg>
+                        </div>
+                        <span>Proven track record of successful project deliveries</span>
+                    </div>
+                    <div class="why-feature reveal">
+                        <div class="why-feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M12 2v4" />
+                                <path d="m6.8 14-3.5 2" />
+                                <path d="m20.7 16-3.5-2" />
+                                <path d="M6.8 10 3.3 8" />
+                                <path d="m20.7 8-3.5 2" />
+                                <circle cx="12" cy="12" r="6" />
+                            </svg>
+                        </div>
+                        <span>Commitment to innovation and continuous learning</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ready to Transform CTA Section -->
+    <section class="cta-section reveal">
+        <div class="cta-background">
+            <div class="cta-shape cta-shape-1"></div>
+            <div class="cta-shape cta-shape-2"></div>
+            <div class="cta-shape cta-shape-3"></div>
+        </div>
+        <div class="container">
+            <div class="cta-content">
+                <span class="cta-label">Ready to Begin?</span>
+                <h2 class="cta-title">Ready to Transform Your Ideas Into Reality?</h2>
+                <p class="cta-desc">Let's collaborate to bring your vision to life. Our team of experts is ready to help
+                    you build innovative solutions that drive growth and success.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="cta-btn-primary">
+                        <span>Contact Us</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14" />
+                            <path d="m12 5 7 7-7 7" />
+                        </svg>
+                    </a>
+                    <a href="services.html" class="cta-btn-secondary">
+                        <span>Explore Services</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <!-- Company Info -->
+                    <div class="footer-col footer-about">
+                        <h3 class="footer-logo">
+                            <img src="/images/logo-removebg-preview.png" alt="Nathewave Nexgen">
+                        </h3>
+                        <p class="footer-fontA">Pioneering AI and machine learning solutions for businesses worldwide.
+                        </p>
+                        <div class="footer-social">
+                            <a href="#" class="social-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="currentColor">
+                                    <path
+                                        d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                                </svg>
+                            </a>
+                            <a href="#" class="social-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="currentColor">
+                                    <path
+                                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                                </svg>
+                            </a>
+                            <a href="#" class="social-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="currentColor">
+                                    <path
+                                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div class="footer-col">
+                        <h4>Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="career.html">Career</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Our Services -->
+                    <div class="footer-col">
+                        <h4>Our Services</h4>
+                        <ul class="footer-links">
+                            <li><a href="services.html">Web Development</a></li>
+                            <li><a href="services.html">App Development</a></li>
+                            <li><a href="services.html">AI & Machine Learning</a></li>
+                            <li><a href="services.html">Software Development</a></li>
+                            <li><a href="services.html">Database Management</a></li>
+                            <li><a href="services.html">Cyber Security</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact Us -->
+                    <div class="footer-col">
+                        <h4>Contact Us</h4>
+                        <ul class="footer-contact">
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
+                                <span>R.S.No.75/30.31,32 Plot No.24 Akshar Bunglow Bharati nagar, Morewadi, Kolhapur
+                                    (416503)</span>
+                            </li>
+                            <li class="footer-contact-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <rect width="20" height="16" x="2" y="4" rx="2" />
+                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                                </svg>
+                                <a href="mailto:support@Nathewave.com">support@Nathewave.com</a>
+                            </li>
+                            <li class="footer-contact-item2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                                </svg>
+                                <a href="tel:+918329544008">+91 8329544008</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 Nathewave Nexgen. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="privacy-policy.html">Privacy Policy</a>
+                        <a href="terms-conditions.html">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/918329544008" class="whatsapp-button" target="_blank" rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.149-.67.149-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.123-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 9.89-5.335 9.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+        </svg>
+        <span class="whatsapp-tooltip">Chat with us on WhatsApp</span>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
