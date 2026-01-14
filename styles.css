@@ -1304,6 +1304,9 @@ body {
     .mission-section {
         margin-top: 32rem !important;
     }
+    .mission-vision-content {
+    padding: 90px 0;
+}
 }
 
 @media (max-width: 278px) {
