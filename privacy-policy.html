@@ -12,6 +12,147 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ================= BASE STYLES (DESKTOP SAFE) ================= */
+
+.privacy-policy-main {
+    width: 100%;
+    background-color: #0f172a;
+    color: #e5e7eb;
+    padding: 80px 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.privacy-policy-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.privacy-policy-header h1 {
+    font-size: 2.8rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.last-updated {
+    font-size: 0.95rem;
+    color: #94a3b8;
+}
+
+.privacy-policy-content {
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.intro {
+    margin-bottom: 30px;
+    color: #cbd5f5;
+}
+
+.policy-section {
+    margin-bottom: 35px;
+}
+
+.policy-section h2 {
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.policy-section p {
+    margin-bottom: 10px;
+}
+
+.policy-section ul {
+    padding-left: 20px;
+}
+
+.policy-section li {
+    margin-bottom: 8px;
+}
+
+.contact-info1 {
+    margin-top: 10px;
+    background: rgba(255,255,255,0.05);
+    padding: 15px;
+    border-radius: 8px;
+    color: #e5e6e8;
+}
+@media (max-width: 320px) {
+    .privacy-policy-main {
+        padding: 50px 12px;
+    }
+
+    .privacy-policy-header h1 {
+        font-size: 1.6rem;
+    }
+
+    .privacy-policy-content {
+        font-size: 0.85rem;
+    }
+
+    .policy-section h2 {
+        font-size: 1.05rem;
+    }
+}
+@media (max-width: 480px) {
+    .privacy-policy-main {
+        padding: 60px 15px;
+    }
+
+    .privacy-policy-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .privacy-policy-content {
+        font-size: 0.9rem;
+    }
+
+    .policy-section h2 {
+        font-size: 1.1rem;
+    }
+}
+@media (max-width: 576px) {
+    .privacy-policy-header h1 {
+        font-size: 2rem;
+    }
+
+    .privacy-policy-content {
+        font-size: 0.95rem;
+    }
+}
+@media (max-width: 768px) {
+    .privacy-policy-header h1 {
+        font-size: 2rem;
+        margin-top: 30px;
+    }
+
+    .privacy-policy-header {
+        margin-bottom: 35px;
+    }
+}
+@media (max-width: 992px) {
+    .privacy-policy-main {
+        padding: 70px 30px;
+    }
+}
+@media screen and (max-width: 1152px) {
+    .container {
+        max-width: 950px;
+    }
+}
+@media screen and (max-width: 1440px) {
+    .container {
+        max-width: 1050px;
+    }
+}
+
+    </style>
 </head>
 
 <body>
@@ -136,7 +277,7 @@
                 <section class="policy-section">
                     <h2>10. Contact Us</h2>
                     <p>If you have any questions or concerns about this Privacy Policy, you can contact us at:</p>
-                    <div class="contact-info">
+                    <div class="contact-info1">
                         <p><strong>Nathewave Nexgen</strong><br>
                             Kolhapur, India<br>
                             Email: info@Nathewave.com</p>
