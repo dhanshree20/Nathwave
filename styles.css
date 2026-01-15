@@ -6224,9 +6224,13 @@ textarea {
 
     }
 
+    .navbar {
+        position: fixed;
+    }
+
     .nav-links {
         position: fixed;
-        top: 100px;
+        top: 80px;
         left: -100%;
         width: 100%;
         height: calc(100vh - 70px);
