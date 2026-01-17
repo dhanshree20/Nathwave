@@ -188,16 +188,16 @@ body {
 }
 
 .footer-logo img {
-    height: 50px;
+    height: 30px;
     scale: 4;
     width: auto;
-    /* object-fit: contain; */
+    object-fit: contain;
     transform-origin: left;
     /* Align scaling */
     margin-bottom: 20px;
-    /* background-color: #00a4ef; */
+    background-color: white;
     position: absolute;
-    left: -70px;
+    border-radius: 50px;
     top: 30px;
 }
 
@@ -210,10 +210,11 @@ body {
         scale: 2;
         margin-bottom: 30px;
         transform-origin: center;
+        margin-left: 20px;
     }
 
     .footer-fontA {
-        margin-top: -25px;
+        margin-top: -55px;
         /* background-color: #0078d4; */
         padding-left: 0.4rem;
         width: 100%;
@@ -270,7 +271,7 @@ body {
 }
 
 .footer-fontA {
-    padding-top: 70px;
+    padding-top: 130px;
 
 }
 
@@ -3453,6 +3454,11 @@ body {
     background-color: var(--white);
 }
 
+.container-core-value {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
 .core-values-header {
     text-align: center;
     margin-bottom: 80px;
@@ -3478,8 +3484,9 @@ body {
 
 .core-values-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 28px;
+    align-items: stretch; /* ✅ equal height */
 }
 
 .value-card {
@@ -3493,6 +3500,14 @@ body {
     flex-direction: column;
     position: relative;
     overflow: hidden;
+
+    height: 620px;              /* ✅ image-like height */
+    padding: 40px 28px;         /* ⬅️ horizontal padding thoda kam */
+    text-align: center;
+}
+
+.value-points {
+    margin-top: auto; /* ✅ keeps bullets at bottom */
 }
 
 .value-card:hover {
@@ -3503,7 +3518,7 @@ body {
 
 .value-card .value-number {
     font-family: 'Lora', serif;
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: 700;
     color: transparent;
     -webkit-text-stroke: 1px #ffffff;
@@ -3525,7 +3540,7 @@ body {
 
 .value-card .value-name {
     font-family: 'Lora', serif;
-    font-size: 1.8rem;
+    font-size: 1.3rem;
     font-weight: 700;
     color: #ffffff;
     margin-bottom: 15px;
@@ -3533,7 +3548,7 @@ body {
 
 .value-card .value-desc {
     font-family: 'Poppins', sans-serif;
-    font-size: 1rem;
+    font-size: 0.8rem;
     color: rgb(170, 170, 170);
     line-height: 1.7;
 }
@@ -4892,9 +4907,16 @@ body {
 
 /* Form */
 .application-form {
-    margin-top: 20px;
+     margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px 20px;
 }
 
+.form-group:nth-last-child(2),
+.submit-btn {
+    grid-column: span 2;
+}
 .form-group {
     margin-bottom: 15px;
 }
@@ -5056,6 +5078,23 @@ body {
     }
 }
 
+
+@media (max-width: 768px) {
+    .application-form {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* All fields one column */
+    .form-group,
+    .submit-btn {
+        grid-column: span 1 !important;
+    }
+
+    /* Resume ke niche spacing */
+    .submit-btn {
+        margin-top: 16px;
+    }
+}
 
 
 
@@ -6074,12 +6113,13 @@ textarea {
     background: linear-gradient(90deg, #061533 0%, transparent 100%);
 }
 
-.footer-logo {
+/* .footer-logo {
     font-family: 'Lora', serif;
     font-size: 1.6rem;
     font-weight: 700;
     color: white;
     margin-bottom: 20px;
+    background-color: white;
 }
 
 .footer-logo span {
@@ -6088,7 +6128,7 @@ textarea {
     font-weight: 400;
     color: white;
     display: block;
-}
+} */
 
 .footer-about {
     position: relative;
@@ -7586,6 +7626,7 @@ body {
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 20px;
+    object-position: center 20%;
 }
 
 .team-card h3 {
