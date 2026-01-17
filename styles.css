@@ -210,15 +210,16 @@ body {
         scale: 2;
         margin-bottom: 30px;
         transform-origin: center;
-        margin-left: 20px;
+        margin-left: 15px;
     }
 
     .footer-fontA {
-        margin-top: -55px;
+        margin-top: -70px;
         /* background-color: #0078d4; */
         padding-left: 0.4rem;
         width: 100%;
         text-align: left;
+        margin-left: -5px;
     }
 
     /* Align all footer elements to left on mobile */
@@ -3622,6 +3623,7 @@ body {
 
     .value-card {
         padding: 35px;
+        height: auto;
     }
 
     .value-card .value-number {
@@ -6574,10 +6576,6 @@ textarea {
     .core-values-grid {
         grid-template-columns: 1fr;
         gap: 20px;
-    }
-
-    .value-card {
-        padding: 30px 25px;
     }
 
     .value-card:hover {
