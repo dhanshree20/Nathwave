@@ -122,29 +122,29 @@
 
           <div class="row">
             <div class="field">
-              <label>First Name</label>
+              <label>First Name<span style="color: red;">*</span></label>
               <input type="text" name="first_name" placeholder="John" required />
             </div>
             <div class="field">
-              <label>Last Name</label>
+              <label>Last Name<span style="color: red;">*</span></label>
               <input type="text" name="last_name" placeholder="Doe" required />
             </div>
           </div>
 
           <div class="row">
             <div class="field">
-              <label>Email</label>
+              <label>Email<span style="color: red;">*</span></label>
               <input type="email" name="email" placeholder="john@example.com" required />
             </div>
             <div class="field">
-              <label>Phone</label>
-              <input type="tel" name="phone" placeholder="+91 98765 43210" />
+              <label>Phone<span style="color: red;">*</span></label>
+              <input type="tel" name="phone" placeholder="+91 98765 43210" required/>
             </div>
           </div>
 
           <div class="field">
-            <label>Subject</label>
-            <select name="subject">
+            <label>Subject<span style="color: red;">*</span></label>
+            <select name="subject" required>
               <option>Select a subject</option>
               <option>General Inquiry</option>
               <option>Project Discussion</option>
@@ -165,8 +165,8 @@
           </div>
 
           <div class="field">
-            <label>Message</label>
-            <textarea name="message" rows="5" placeholder="Tell us about your project or inquiry..."></textarea>
+            <label>Message<span style="color: red;">*</span></label>
+            <textarea name="message" rows="5" placeholder="Tell us about your project or inquiry..." required></textarea>
           </div>
 
           <button type="submit" class="submit-btn">
