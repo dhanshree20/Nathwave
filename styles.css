@@ -7651,12 +7651,14 @@ body {
 
 .role {
     display: inline-block;
-    background: #f1c40f;
-    color: #fff;
+    background: white;
+    color: black;
     padding: 6px 18px;
     border-radius: 20px;
     margin: 15px 0;
-    font-size: 15px;
+    font-size: 18px;
+    font-weight: 800;
+    font-family: 'Lora', serif;
 }
 
 .team-card h3 {
